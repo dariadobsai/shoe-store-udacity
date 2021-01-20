@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#A875B3</color>
+    <color name="colorPrimaryDark">#350841</color>
+    <color name="colorAccent">#A875B3</color>
+    <color name="colorBottomAppDrawer">#FFE4FF</color>
+    <color name="colorAppNameTitle">@color/colorAccent</color>
+    <color name="colorLight">#FFF9FF</color>
+    <color name="colorLoginDisabled">#80A875B3</color>
+    <color name="colorBtnSignUpDisabled">#80757575</color>
+    <color name="colorError">#AB001F</color>
+</resources>

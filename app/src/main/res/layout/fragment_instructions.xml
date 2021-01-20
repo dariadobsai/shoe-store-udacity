@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--
+        ~ Based on architecture components samples: NavigationBasicSample project, a similar layout was implemented using ConstraintLayout
+        ~ https://github.com/android/architecture-components-samples/blob/master/NavigationBasicSample/app/src/main/res/layout/fragment_title_screen.xml
+
+        ~ I followed this approach as well, but for another screen -> fragment_welcome.xml, which is absolutely identical by its structure to this screen,
+        ~ I applied LinearLayout, where I wrote the detailed comment regarding this.
+
+        ~ In the given screen, unlike in the fragment_welcome.xml, views' positioning in the center was achieved by using:
+            1) "layout_constraintVertical_chainStyle" attribute with a style: packed -> https://developer.android.com/reference/androidx/constraintlayout/widget/ConstraintLayout#Chains
+            2)  bidirectional constraints -> https://android.jlelse.eu/centering-views-in-android-layouts-547930621de7
+
+        ~ Conclusion:
+            1) in this particular case, both of the approaches are acceptable, since the number of elements is very limited;
+            2) for the sake of experiment and comparison I stick to using different approaches.
+    -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/instr_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cont_desc_instructions"
+            android:src="@drawable/ic_phone"
+            app:layout_constraintBottom_toTopOf="@id/instr_txt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/instr_txt"
+            style="@style/OnboardingTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/instructions_title"
+            app:layout_constraintBottom_toTopOf="@+id/instr_txt_friendly_note"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/instr_image"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/instr_txt_friendly_note"
+            style="@style/OnboardingMessageStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/instructions_txt"
+            app:layout_constraintBottom_toTopOf="@+id/instr_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/instr_txt"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/instr_btn"
+            style="@style/ButtonGetStartedStyle"
+            android:layout_width="@dimen/button_onboarding_width"
+            android:layout_height="wrap_content"
+            android:text="@string/instructions_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/instr_txt_friendly_note"
+            app:layout_constraintVertical_chainStyle="packed" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

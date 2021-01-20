@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Reason for choosing ConstraintLayout:
+
+   ~ Here we are having a repeating concept: one label and an edit field below.
+   ~ Sometime Login forms may contain even more fields that that, but even in
+   this particular case it would require nested Linear layouts inside a Relative layout or ConstraintLayout.
+   ~ However, by using only ConstraintLayout there is no need in creating additional layouts inside.
+
+-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/margin_large"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/login_label"
+            style="@style/LoginLabelStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/login_layout_margin_top"
+            android:text="@string/email_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/login_email_input"
+            style="@style/LoginInputFieldStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:importantForAutofill="no"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/login_label"
+            tools:ignore="LabelFor"
+            tools:text="email" />
+
+        <TextView
+            android:id="@+id/password_label"
+            style="@style/LoginLabelStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/password_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/login_email_input" />
+
+        <EditText
+            android:id="@+id/login_password_input"
+            style="@style/LoginInputFieldStyle.Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:importantForAutofill="no"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/password_label"
+            tools:ignore="LabelFor"
+            tools:text="password" />
+
+        <TextView
+            android:id="@+id/input_error"
+            style="@style/LoginErrorMessageStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/input_error_message"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/login_password_input" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_login"
+            style="@style/LoginButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="@string/login_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/login_password_input"
+            app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.SmallComponent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_existing_account"
+            style="@style/SignUpButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="@string/sign_up_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_login"
+            app:layout_constraintVertical_bias="0.0"
+            app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.SmallComponent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

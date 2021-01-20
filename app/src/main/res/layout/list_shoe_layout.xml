@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- For this layout the ConstraintLayout was chosen because:
+        1) there are a lot of views and later new views can be added
+        2) it allowed to position the name of the product in a custom way easily (it overlays the half of the ImageView)
+
+    ~ Note: the ImageView is now adapted only for using custom icons of specific size. In a real world scenario,
+    ~ it would require specifying precise size to avoid storing images of different sizes.
+-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="shoeModel"
+            type="com.example.shoe_store_dk.model.Shoe" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/card_view_shoe_item_width"
+        android:layout_height="@dimen/card_view_shoe_item_height"
+        android:layout_margin="@dimen/margin_medium"
+        app:cardCornerRadius="@dimen/margin_medium">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/shoe_image_container"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/background_shoe_item"
+                android:layout_gravity="center"
+                android:background="@color/colorLight"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/shoe_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:contentDescription="@string/cont_desc_shoe_image"
+                android:src="@drawable/ic_sneaker"
+                app:layout_constraintBottom_toBottomOf="@id/shoe_image_container"
+                app:layout_constraintEnd_toEndOf="@+id/shoe_image_container"
+                app:layout_constraintHeight_default="wrap"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/shoe_name"
+                style="@style/ShoeNameStyle"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="@{shoeModel.name}"
+                app:layout_constraintBottom_toTopOf="@id/shoe_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_default="wrap"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shoe_image"
+                app:layout_constraintWidth_default="wrap"
+                tools:text="Shoes" />
+
+            <TextView
+                android:id="@+id/shoe_size"
+                style="@style/ShoeSizeStyle"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="@{String.valueOf(shoeModel.size)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_default="wrap"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shoe_name"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintWidth_default="wrap"
+                tools:text="37" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

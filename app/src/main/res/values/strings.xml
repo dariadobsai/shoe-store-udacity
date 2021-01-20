@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Shoespace</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_button">Get started</string>
+    <string name="welcome_title">Welcome</string>
+    <string name="instructions_button">Got it</string>
+    <string name="instructions_txt">Add your best offerings of the quality products</string>
+    <string name="login_hint_email">Email</string>
+    <string name="login_hint_password">Password</string>
+    <string name="login_button">Login</string>
+    <string name="email_label">Email</string>
+    <string name="password_label">Password</string>
+    <string name="sign_up_button">Sign up</string>
+    <string name="instructions_title">Shoe store</string>
+    <string name="welcome_text">Create and manage your own Shoespace</string>
+    <string name="cont_desc_logo">application logotype and a main welcome image</string>
+    <string name="cont_desc_instructions">instructions that illustrate the shoe list main screen</string>
+    <string name="detail_name_label">Name</string>
+    <string name="detail_size_label">Size (cm)</string>
+    <string name="detail_company_label">Company</string>
+    <string name="detail_description_label">Description</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_save">Save</string>
+    <string name="shoe_store_empty_title">Shoe store seems empty!</string>
+    <string name="shoe_store_empty_message">Start adding shoes by clicking the plus button below</string>
+    <string name="menu_title_log_out">Log out</string>
+    <string name="input_error_message">Please enter correct email and password</string>
+    <string name="max_char_count">\"Max character length is \"</string>
+    <string name="cont_desc_shoe_image">Image of the product</string>
+</resources>
