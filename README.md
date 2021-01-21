@@ -12,3 +12,7 @@ There are 2 required sections to complete this project:
 * Navigation
 
 The goal is to build an app that challenges on the layouts and the navigation features. 
+
+### Final output
+
+
