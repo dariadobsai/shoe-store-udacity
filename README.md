@@ -16,4 +16,4 @@ The goal is to build an app that challenges on the layouts and the navigation fe
 ### Final output
 
 
-![img](https://i.imgur.com/CRbTgCw.jpg)
+![img](https://i.imgur.com/CRbTgCw.jpg =250x250)
