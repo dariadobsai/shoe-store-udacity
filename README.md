@@ -15,4 +15,4 @@ The goal is to build an app that challenges on the layouts and the navigation fe
 
 ### Final output
 
-<img src="https://i.imgur.com/CRbTgCw.jpg" width="350" height="550">
+<img src="https://i.imgur.com/CRbTgCw.jpg" width="250" height="500">
